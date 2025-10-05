@@ -11,9 +11,8 @@ const about = {
   description:
     "I am an aspiring full-stack developer focused on MERN stack with experience in building responsive, interactive web applications. Passionate about learning new technologies and writing clean, efficient code.",
   resume:
-    "https://drive.google.com/file/d/1_d6Pz38f6UpRw_vt7XMgoihJp7-AhyKy/view?usp=sharing",
+    "",
   social: {
-    linkedin: "https://linkedin.com/in/sankitdev",
     github: "https://github.com/sankitdev",
   },
 };
@@ -35,15 +34,6 @@ const projects = [
     image: netflix,
     sourceCode: "https://github.com/sankitdev/YumRun",
     livePreview: "https://netflixgpt-b8752.web.app/",
-  },
-  {
-    name: "FocusTube",
-    description:
-      "A YouTube clone focused on providing a clean and minimal video browsing experience. Built with React and Redux, featuring responsive design.",
-    stack: ["React", "Redux", "Tailwind CSS"],
-    image: focustube,
-    sourceCode: "https://github.com/sankitdev/focus-tube",
-    livePreview: "",
   },
 ];
 const skills = [

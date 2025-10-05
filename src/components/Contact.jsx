@@ -17,15 +17,7 @@ const Contact = () => {
           subject
         )}&body=${encodeURIComponent(body)}`}
       >
-        {" "}
-        <button className="btn btn-primary">📧 Email Me!</button>
-      </a>
-      <a
-        href="https://linkedin.com/in/sankitdev"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <button className="btn btn-primary ml-2">Linkedin</button>
+        <button className="btn btn-primary">Email Me!</button>
       </a>
     </div>
   );
