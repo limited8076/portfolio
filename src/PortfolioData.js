@@ -1,6 +1,5 @@
 import yumrun from "./assets/YumRun.png";
 import netflix from "./assets/Netflix.jpg";
-import focustube from "./assets/FocusTube.png";
 const header = {
   homepage: "",
   title: "Ankit Singh",

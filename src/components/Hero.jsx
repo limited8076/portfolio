@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { about } from "../PortfolioData";
 import Typewriter from "typewriter-effect";
 
@@ -38,14 +38,6 @@ const Hero = () => {
               className="btn btn-outline mx-2 text-xl"
             >
               <FaGithub />
-            </a>
-            <a
-              href={social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-outline text-xl"
-            >
-              <FaLinkedin />
             </a>
           </div>
         </div>
