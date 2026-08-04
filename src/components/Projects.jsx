@@ -1,6 +1,8 @@
 import ProjectCards from "./ProjectCards";
-import { projects } from "../PortfolioData";
+import getPortfolioData from "../PortfolioData";
+
 const Project = () => {
+  const { projects } = getPortfolioData();
   return (
     <div id="projects">
       <h1 className="text-center text-4xl text-primary font-semibold">

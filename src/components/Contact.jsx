@@ -1,5 +1,8 @@
+import getPortfolioData from "../PortfolioData";
+
 const Contact = () => {
-  const email = "sankitcoder@gmail.com";
+  const { contact } = getPortfolioData();
+  const email = contact?.email || "sankitdev.official@gmail.com";
   const subject = "Inquiry from Portfolio";
   const body = "Hello, I would like to get in touch regarding..."; // Replace with your email
 
