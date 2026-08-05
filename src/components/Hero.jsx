@@ -1,10 +1,11 @@
 import { FaGithub } from "react-icons/fa";
-import getPortfolioData from "../PortfolioData";
+import { usePortfolio } from "../PortfolioContext";
 import Typewriter from "typewriter-effect";
 
 const Hero = () => {
-  const { about } = getPortfolioData();
-  const { name, role, description, resume, social } = about;
+  const data = usePortfolio();
+  const { about } = data || {};
+  const { name, role, description, resume, social } = about || {};
   return (
     <div className="hero min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-6rem)]">
       <div className="hero-content text-center flex-col">

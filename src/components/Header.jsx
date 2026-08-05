@@ -1,9 +1,10 @@
 import ThemeToggle from "./ThemeToggle";
-import getPortfolioData from "../PortfolioData";
+import { usePortfolio } from "../PortfolioContext";
 
 const Header = () => {
-  const { header } = getPortfolioData();
-  const title = header?.title || "Ankit Singh";
+  const data = usePortfolio();
+  const { header } = data || {};
+  const title = header?.title || "Portfolio";
   const initials = title
     .split(" ")
     .map((n) => n[0])
