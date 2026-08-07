@@ -1,3 +1,6 @@
+import yumrun from "./assets/YumRun.png";
+import netflix from "./assets/Netflix.jpg";
+
 function getPortfolioData() {
   const portdata = {
     home: {
@@ -14,14 +17,14 @@ function getPortfolioData() {
         title: "YumRun",
         description:
           "A food ordering app built with React, Redux, and Tailwind CSS. It offers a clean user interface and seamless user experience for ordering meals.",
-        image: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+        image: yumrun,
         link: "https://yumrun-b81a7.web.app/",
       },
       {
         title: "NetFlix GPT",
         description:
-          "Netflix GPT is a single-page web application that allows users to explore movies from the TMDB API, while offering AI-powered content generation through GPT.",
-        image: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
+          "Netflix GPT is a single-page web application that allows users to explore movies from the TMDB API, while offering AI-powered content generation through GPT. The app leverages React for the frontend, Redux for state management, and Firebase for authentication.",
+        image: netflix,
         link: "https://netflixgpt-b8752.web.app/",
       },
     ],
@@ -31,22 +34,3 @@ function getPortfolioData() {
 }
 
 export default getPortfolioData;
-
-    // skills: [
-    //   "HTML",
-    //   "CSS",
-    //   "JavaScript",
-    //   "TypeScript",
-    //   "React",
-    //   "Redux",
-    //   "Tailwind CSS",
-    //   "Material UI",
-    //   "Git",
-    //   "CI/CD",
-    //   "Jest",
-    //   "Enzyme",
-    // ],
-    // contact: {
-    //   email: "sankitdev.official@gmail.com",
-    // },
-
