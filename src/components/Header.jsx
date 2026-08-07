@@ -3,9 +3,8 @@ import { usePortfolio } from "../PortfolioContext";
 
 const Header = () => {
   const data = usePortfolio();
-  const { header } = data || {};
-  const title = header?.title || "Portfolio";
-  const initials = title
+  const name = data?.home?.name || "Portfolio";
+  const initials = name
     .split(" ")
     .map((n) => n[0])
     .join("");

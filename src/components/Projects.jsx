@@ -10,15 +10,13 @@ const Project = () => {
         PROJECTS
       </h1>
       <div className="flex justify-center items-center flex-wrap mt-10">
-        {projects.map((items) => (
+        {projects.map((item, index) => (
           <ProjectCards
-            key={items.name}
-            name={items.name}
-            image={items.image}
-            techStack={items.stack}
-            description={items.description}
-            github={items.sourceCode}
-            live={items.livePreview}
+            key={index}
+            title={item.title}
+            image={item.image}
+            description={item.description}
+            link={item.link}
           />
         ))}
       </div>
