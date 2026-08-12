@@ -8,7 +8,14 @@ function Databridge() {
     useEffect(() => {
      const Frontmessage = (event) => {
         if(event.data?.type === "UPDATE_PORTFOLIO_DATA"){
-           setData(event.data.payload)
+           const payload = event.data.payload;
+           setData(prev => {
+             const merged = { ...prev };
+             Object.keys(payload).forEach(section => {
+               merged[section] = { ...prev[section], ...payload[section] };
+             });
+             return merged;
+           });
         }
     };
 

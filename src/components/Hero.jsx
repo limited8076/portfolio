@@ -15,16 +15,14 @@ const Hero = () => {
           </h1>
           <p className="py-6 md:w-4/5 mx-auto sm:text-xl">{description}</p>
           <div className="flex justify-center items-center">
-            {resume && (
-              <a
-                href={resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-outline btn-primary px-5"
-              >
-                Resume
-              </a>
-            )}
+            <a
+              href={resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline btn-primary px-5"
+            >
+              Resume
+            </a>
             {github && (
               <a
                 href={github}
