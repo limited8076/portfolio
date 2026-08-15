@@ -12,7 +12,19 @@ function Databridge() {
            setData(prev => {
              const merged = { ...prev };
              Object.keys(payload).forEach(section => {
-               merged[section] = { ...prev[section], ...payload[section] };
+               if (Array.isArray(payload[section])) {
+                 merged[section] = payload[section];
+               } else if (
+                 typeof payload[section] === "object" &&
+                 payload[section] !== null &&
+                 typeof prev[section] === "object" &&
+                 prev[section] !== null &&
+                 !Array.isArray(prev[section])
+               ) {
+                 merged[section] = { ...prev[section], ...payload[section] };
+               } else {
+                 merged[section] = payload[section];
+               }
              });
              return merged;
            });

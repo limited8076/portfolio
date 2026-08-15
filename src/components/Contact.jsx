@@ -1,10 +1,23 @@
 import { usePortfolio } from "../PortfolioContext";
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaYoutube,
+  FaTwitter,
+} from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+
+const icons = {
+  gmail: <SiGmail />,
+  twitter: <FaTwitter />,
+  linkedin: <FaLinkedin />,
+  instagram: <FaInstagram />,
+  youtube: <FaYoutube />,
+};
 
 const Contact = () => {
   const data = usePortfolio();
-  const email = data?.contact?.email || "";
-  const subject = "Inquiry from Portfolio";
-  const body = "Hello, I would like to get in touch regarding..."; // Replace with your email
+  const socials = data?.contact?.socials || [];
 
   return (
     <div className="text-center my-20" id="contact">
@@ -15,13 +28,20 @@ const Contact = () => {
         message—whether its for a project, job opportunity, or just to chat! 🚀
       </p>
 
-      <a
-        href={`mailto:${email}?subject=${encodeURIComponent(
-          subject
-        )}&body=${encodeURIComponent(body)}`}
-      >
-        <button className="btn btn-primary">Email Me!</button>
-      </a>
+      <div className="flex justify-center items-center gap-4 flex-wrap">
+        {socials.map((item, index) => (
+          <a
+            key={index}
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline btn-primary text-xl"
+            title={item.name || item.platform}
+          >
+            {icons[item.platform?.toLowerCase()] || item.name}
+          </a>
+        ))}
+      </div>
     </div>
   );
 };

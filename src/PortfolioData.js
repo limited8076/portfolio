@@ -28,6 +28,41 @@ function getPortfolioData() {
         link: "https://netflixgpt-b8752.web.app/",
       },
     ],
+
+    contact: {
+      email: "sankitdev@gmail.com",
+      socials: [
+        {
+          platform: "gmail",
+          name: "Gmail",
+          url: "mailto:sankitdev@gmail.com",
+        },
+        {
+          platform: "twitter",
+          name: "Twitter",
+          url: "https://twitter.com/sankitdev",
+        },
+        {
+          platform: "linkedin",
+          name: "LinkedIn",
+          url: "https://linkedin.com/in/sankitdev",
+        },
+        {
+          platform: "instagram",
+          name: "Instagram",
+          url: "https://instagram.com/sankitdev",
+        },
+        {
+          platform: "youtube",
+          name: "YouTube",
+          url: "https://youtube.com/@sankitdev",
+        },
+      ],
+    },
+
+    footer: {
+      name: "sankitdev",
+    },
   };
 
   return portdata;
