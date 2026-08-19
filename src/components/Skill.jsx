@@ -1,73 +1,58 @@
 import { useState } from "react";
-import { FrontEnd, BackEnd, Technology } from "../Images";
+import { usePortfolio } from "../PortfolioContext";
+
 const Skill = () => {
-  const [activeTab, setActiveTab] = useState("FrontEnd");
-  const handleToggle = (tab) => {
-    setActiveTab(tab);
-  };
+  const data = usePortfolio();
+  const { Frontend = [], Backend = [], Technologies = [] } = data?.tech || {};
+
+  const [activeTab, setActiveTab] = useState("Frontend");
+
+  const tabs = [
+    { label: "FrontEnd", key: "Frontend", skills: Frontend },
+    { label: "BackEnd", key: "Backend", skills: Backend },
+    { label: "Technologies", key: "Technologies", skills: Technologies },
+  ];
+
+  const activeSkills = tabs.find((t) => t.key === activeTab)?.skills || [];
+
   return (
     <div className="text-center my-20" id="skills">
       <h1 className="text-4xl font-bold text-primary">Skills</h1>
       <div
         role="tablist"
-        className="tabs tabs-boxed mt-10 w-full sm:w-1/2 mx-auto "
+        className="tabs tabs-boxed mt-10 w-full sm:w-1/2 mx-auto"
       >
-        <a
-          role="tab"
-          className={`tab ${activeTab === "FrontEnd" ? "tab-active" : ""}`}
-          onClick={() => handleToggle("FrontEnd")}
-        >
-          FrontEnd
-        </a>
-        <a
-          role="tab"
-          className={`tab ${activeTab === "BackEnd" ? "tab-active" : ""}`}
-          onClick={() => handleToggle("BackEnd")}
-        >
-          BackEnd
-        </a>
-        <a
-          role="tab"
-          className={`tab ${activeTab === "Technologies" ? "tab-active" : ""}`}
-          onClick={() => handleToggle("Technologies")}
-        >
-          Technologies
-        </a>
+        {tabs.map((tab) => (
+          <a
+            key={tab.key}
+            role="tab"
+            className={`tab ${activeTab === tab.key ? "tab-active" : ""}`}
+            onClick={() => setActiveTab(tab.key)}
+          >
+            {tab.label}
+          </a>
+        ))}
       </div>
-      <div className="flex flex-wrap gap-5 justify-center items-center mt-10">
-        {activeTab === "FrontEnd" &&
-          FrontEnd.map((items, index) => (
+
+      <div className="flex flex-wrap gap-6 justify-center items-center mt-10">
+        {activeSkills.map((skill, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center gap-2 btn w-28 h-28 justify-center hover:scale-95 transition-transform"
+          >
             <img
-              key={index}
-              src={items}
-              alt=""
-              className="hover:scale-95 btn w-24 h-24 object-contain"
+              src={skill.image}
+              alt={skill.name}
+              className="w-12 h-12 object-contain"
             />
-          ))}
-      </div>
-      <div className="flex flex-wrap gap-5 justify-center items-center">
-        {activeTab === "BackEnd" &&
-          BackEnd.map((items, index) => (
-            <img
-              key={index}
-              src={items}
-              alt=""
-              className="hover:scale-95 btn object-contain w-24 h-24"
-            />
-          ))}
-      </div>
-      <div className="flex flex-wrap gap-5 justify-center items-center">
-        {activeTab === "Technologies" &&
-          Technology.map((items, index) => (
-            <img
-              key={index}
-              src={items}
-              alt=""
-              className="hover:scale-95 btn object-contain w-24 h-24"
-            />
-          ))}
+            <span className="text-xs font-medium truncate w-full text-center">
+              {skill.name}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
+
 export default Skill;

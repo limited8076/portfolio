@@ -29,6 +29,28 @@ function getPortfolioData() {
       },
     ],
 
+    tech: {
+      Frontend: [
+        { name: "HTML", image: "" },
+        { name: "CSS", image: "" },
+        { name: "JavaScript", imag: "" },
+        { name: "TypeScript", imag: "" },
+        { name: "React", image: "" },
+        { name: "Next.js", image: "" },
+        { name: "Tailwind CSS", image: "" },
+        { name: "Redux", image: "" },
+      ],
+      Backend: [
+        { name: "Node.js", image: "" },
+        { name: "Express", image: "" },
+        { name: "MongoDB", image: "" },
+      ],
+      Technologies: [
+        { name: "VS Code", image: "" },
+        { name: "Git", image: "" },
+      ],
+    },
+
     contact: {
       email: "sankitdev@gmail.com",
       socials: [
