@@ -51,8 +51,9 @@ function getPortfolioData() {
       ],
     },
 
-    contact: {
-      email: "sankitdev@gmail.com",
+    Contact: {
+      Heading : "Need to get in touch?",
+      description : " Say hello or drop a quick message—whether its for a project, job opportunity, or just to chat! 🚀",
       socials: [
         {
           platform: "gmail",

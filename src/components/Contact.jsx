@@ -17,16 +17,17 @@ const icons = {
 
 const Contact = () => {
   const data = usePortfolio();
-  const socials = data?.contact?.socials || [];
+  const { Heading, description , socials = [] } = data?.Contact || {};
 
   return (
     <div className="text-center my-20" id="contact">
       <h1 className="text-4xl font-bold mb-10 text-primary">Lets Connect!</h1>
-      <p className="text-lg mb-2">Need to get in touch?</p>
-      <p className="text-lg mb-6">
-        <span className="wave">👋</span> Say hello or drop a quick
-        message—whether its for a project, job opportunity, or just to chat! 🚀
-      </p>
+      {Heading && <p className="text-lg mb-2">{Heading}</p>}
+      {description && (
+        <p className="text-lg mb-6">
+          <span className="wave">👋</span>{description}
+        </p>
+      )}
 
       <div className="flex justify-center items-center gap-4 flex-wrap">
         {socials.map((item, index) => (
