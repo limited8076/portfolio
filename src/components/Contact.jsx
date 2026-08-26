@@ -17,7 +17,14 @@ const icons = {
 
 const Contact = () => {
   const data = usePortfolio();
-  const { Heading, description , socials = [] } = data?.Contact || {};
+  const { Heading, description } = data?.Contact || {};
+
+  // Priority: socials from inputdata (sent by main site via postMessage at root level)
+  // Fallback: hardcoded socials in PortfolioData.js -> Contact.socials
+  const socials =
+    data?.socials !== undefined
+      ? data.socials
+      : data?.Contact?.socials ?? [];
 
   return (
     <div className="text-center my-20" id="contact">
